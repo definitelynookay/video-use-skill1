@@ -1,0 +1,580 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Nuvanta launch video</title>
+<style>
+@font-face{font-family:GS;src:url(fonts/GoogleSans-var.woff2) format('woff2');font-weight:400 700;}
+:root{--blue:#2433CA;--blue2:#5B66D7;--blueL:#C8CCF2;--wash:#EEF0FC;--ink:#12131A;--mute:#6B6F80;--paper:#F7F8FC;--line:#E1E4EF;}
+html,body{margin:0;background:#000;}
+#stage{position:relative;width:1920px;height:1080px;overflow:hidden;background-color:var(--paper);
+  background-image:radial-gradient(#D8DCEC 1.6px,transparent 1.8px);background-size:44px 44px;
+  font-family:GS,sans-serif;color:var(--ink);-webkit-font-smoothing:antialiased;}
+.scene{position:absolute;inset:0;display:none;}
+.abs{position:absolute;}
+.center{position:absolute;left:0;right:0;text-align:center;}
+.h1{font-size:84px;font-weight:600;letter-spacing:-0.03em;line-height:1.08;}
+.h2{font-size:56px;font-weight:500;letter-spacing:-0.02em;line-height:1.15;}
+.cap{font-size:52px;font-weight:600;letter-spacing:-0.02em;}
+.eyebrow{font-size:24px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:var(--mute);}
+.blue{color:var(--blue);} .white{color:#fff;} .muted{color:var(--mute);} .lb{color:var(--blueL);}
+.w{display:inline-block;overflow:hidden;vertical-align:top;padding:0.06em 0 0.14em;margin:-0.06em 0 -0.14em;}
+.wi{display:inline-block;}
+.card{position:absolute;background:#fff;border-radius:28px;box-shadow:0 2px 4px rgba(18,19,26,.04),0 18px 48px rgba(36,51,202,.10);}
+.iconwrap{width:104px;height:104px;border-radius:30px;background:var(--wash);display:flex;align-items:center;justify-content:center;}
+.icon{width:56px;height:56px;fill:none;stroke:var(--blue);stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round;}
+.pill{display:inline-flex;align-items:center;height:72px;padding:0 30px;border-radius:36px;font-size:30px;font-weight:500;background:#fff;border:2px solid var(--line);color:#3C3F4D;white-space:nowrap;}
+.arrow{width:44px;height:72px;display:inline-flex;align-items:center;justify-content:center;color:#A7ABBD;font-size:30px;}
+.chip{display:inline-flex;align-items:center;gap:12px;height:56px;padding:0 26px;border-radius:28px;font-size:26px;font-weight:600;}
+.row{display:flex;align-items:center;gap:18px;font-size:30px;font-weight:500;color:var(--ink);}
+.ck{width:44px;height:44px;flex:none;}
+.lockup{display:flex;align-items:center;gap:36px;}
+.lockup .wm{display:flex;flex-direction:column;justify-content:center;}
+.lockup .nv{font-weight:500;letter-spacing:-0.035em;line-height:.9;}
+.lockup .by{font-weight:400;letter-spacing:-0.01em;margin-top:.25em;}
+</style>
+</head>
+<body>
+<div id="stage">
+
+<!-- ============ S1: hook ============ -->
+<div class="scene" id="s1" style="z-index:1">
+  <svg id="net" class="abs" width="1920" height="1080" viewBox="0 0 1920 1080" style="left:0;top:0;transform-origin:960px 430px"></svg>
+  <div class="center h1" id="s1h1" style="top:800px">Global investors are coming to <span class="blue">GIFT City.</span></div>
+  <div class="center h1" id="s1h2" style="top:800px">Your infrastructure should be <span class="blue">ready for them.</span></div>
+</div>
+
+<!-- ============ S2: meet nuvanta ============ -->
+<div class="scene" id="s2" style="z-index:5;background:var(--blue)">
+  <div class="center eyebrow" id="s2eb" style="top:330px;color:var(--blueL);font-size:30px">Meet</div>
+  <div class="abs" id="s2lock" style="left:0;right:0;top:400px;display:flex;justify-content:center"></div>
+  <div class="center h2 white" id="s2l1" style="top:650px">From onboarding to payments,</div>
+  <div class="center h2 lb" id="s2l2" style="top:722px">one platform for global investors.</div>
+</div>
+
+<!-- ============ S3: investor types ============ -->
+<div class="scene" id="s3" style="z-index:2">
+  <div class="center h1" id="s3h" style="top:200px">Onboard <span class="blue">every type</span> of investor.</div>
+  <div id="s3cards"></div>
+</div>
+
+<!-- ============ S4: workflow ============ -->
+<div class="scene" id="s4" style="z-index:3">
+  <div class="center h1" id="s4h" style="top:420px"><span class="muted">For investors anywhere,</span><br>one digital workflow.</div>
+  <div id="s4ui">
+    <svg id="stepper" class="abs" width="1920" height="200" viewBox="0 0 1920 200" style="left:0;top:90px"></svg>
+    <div class="card" id="s4card" style="left:460px;top:290px;width:1000px;height:540px;overflow:hidden">
+      <div class="abs" style="left:0;right:0;top:0;height:76px;border-bottom:2px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 36px;box-sizing:border-box">
+        <div id="s4mini"></div>
+        <div style="font-size:22px;color:var(--mute);font-weight:500" id="s4stepno">Investor onboarding</div>
+      </div>
+      <div id="panels" class="abs" style="left:0;top:76px;width:1000px;height:464px"></div>
+    </div>
+    <div id="s4caps"></div>
+  </div>
+</div>
+
+<!-- ============ S5: old vs new ============ -->
+<div class="scene" id="s5" style="z-index:4">
+  <div class="abs" id="s5hw" style="left:0;right:0;top:380px;transform-origin:960px 0">
+    <div class="center h1" id="s5h" style="position:relative;font-size:104px">From days of paperwork<br><span class="blue">to minutes.</span></div>
+  </div>
+  <div class="abs eyebrow" id="s5oldl" style="left:216px;top:390px">The old way</div>
+  <div class="abs" id="s5old" style="left:0;right:0;top:440px;display:flex;justify-content:center"></div>
+  <svg class="abs" id="s5loop" width="1920" height="160" style="left:0;top:400px;overflow:visible"></svg>
+  <svg class="abs" id="s5strike" width="1920" height="10" style="left:0;top:471px;overflow:visible"></svg>
+  <div class="abs eyebrow blue" id="s5newl" style="left:216px;top:640px">With nuvanta</div>
+  <div class="abs" id="s5new" style="left:216px;top:690px;display:flex;align-items:center;gap:28px"></div>
+</div>
+
+<!-- ============ S6: compliance ============ -->
+<div class="scene" id="s6" style="z-index:5">
+  <div id="papers"></div>
+  <svg class="abs" id="shield" width="220" height="250" viewBox="0 0 220 250" style="left:850px;top:250px">
+    <path d="M110 8 L200 44 V118 C200 178 160 220 110 242 C60 220 20 178 20 118 V44 Z" fill="#2433CA"/>
+    <path id="shck" d="M68 128 L98 158 L154 98" fill="none" stroke="#fff" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" pathLength="1"/>
+  </svg>
+  <div class="center h1" id="s6a" style="top:600px">Compliance isn't removed.</div>
+  <div class="center h1 blue" id="s6b" style="top:700px">The paper is.</div>
+</div>
+
+<!-- ============ S7: institutions ============ -->
+<div class="scene" id="s7" style="z-index:4">
+  <div class="center h1" id="s7h" style="top:220px">Built for <span class="blue">GIFT City</span> institutions.</div>
+  <div id="s7cards"></div>
+</div>
+
+<!-- ============ S8: three ways ============ -->
+<div class="scene" id="s8" style="z-index:4">
+  <div class="center h1" id="s8h" style="top:150px"><span class="blue">Three ways</span> to verify.</div>
+  <div id="s8cards"></div>
+</div>
+
+<!-- ============ S9: end card ============ -->
+<div class="scene" id="s9" style="z-index:6;background:var(--blue)">
+  <div class="center h1 white" id="s9a" style="top:380px;font-size:104px">Onboard global investors.</div>
+  <div class="center h1 lb" id="s9b" style="top:500px;font-size:104px">Move global money.</div>
+  <div class="center h2 lb" id="s9w" style="top:330px;font-size:40px">with</div>
+  <div class="abs" id="s9lock" style="left:0;right:0;top:420px;display:flex;justify-content:center"></div>
+</div>
+
+<!-- ============ wipe overlay ============ -->
+<div id="wipe" class="abs" style="left:0;top:0;width:1920px;height:1080px;z-index:20;visibility:hidden;pointer-events:none">
+  <svg id="wipeL" class="abs" width="980" height="1800" viewBox="0 0 980 1800" style="left:0;top:0"><path d="M0 1800 V0 A980 300 0 0 1 980 300 V1800 Z" fill="#2433CA"/></svg>
+  <svg id="wipeR" class="abs" width="960" height="1800" viewBox="0 0 960 1800" style="left:960px;top:0"><path d="M0 1800 V0 A960 700 0 0 1 960 700 V1800 Z" fill="#2433CA"/></svg>
+</div>
+
+</div>
+
+<script>
+// ---------- timing (seconds). Re-time these to the recorded VO. ----------
+const SCENES = {
+  s1:[0,7.6], s2:[7.2,14.2], s3:[13.4,21.4], s4:[21.2,39.0], s5:[38.8,50.6],
+  s6:[50.4,56.0], s7:[55.8,63.2], s8:[63.0,74.6], s9:[74.2,81.5],
+};
+const WIPES = [6.6, 73.5];           // arch wipe start times (0.8s each)
+const STEPS = [24.4, 27.2, 30.0, 32.8, 35.6];  // workflow step starts (absolute)
+const DURATION = 81.5;
+
+// ---------- helpers ----------
+const $ = id => document.getElementById(id);
+const clamp = (x,a=0,b=1) => Math.min(b,Math.max(a,x));
+const prog = (t,a,b) => clamp((t-a)/(b-a));
+const eo = x => 1-Math.pow(1-x,3);
+const eo5 = x => 1-Math.pow(1-x,5);
+const eio = x => x<.5 ? 4*x*x*x : 1-Math.pow(-2*x+2,3)/2;
+const back = x => {const c1=1.5,c3=c1+1;return 1+c3*Math.pow(x-1,3)+c1*Math.pow(x-1,2);};
+const lerp = (a,b,p) => a+(b-a)*p;
+const NS = 'http://www.w3.org/2000/svg';
+function svgEl(tag, attrs, parent){const e=document.createElementNS(NS,tag);for(const k in attrs)e.setAttribute(k,attrs[k]);if(parent)parent.appendChild(e);return e;}
+function div(html, style, parent, cls){const e=document.createElement('div');if(cls)e.className=cls;if(style)e.style.cssText=style;e.innerHTML=html||'';if(parent)parent.appendChild(e);return e;}
+
+function split(el){
+  const nodes=[...el.childNodes]; el.innerHTML='';
+  nodes.forEach(n=>{
+    if(n.nodeName==='BR'){el.appendChild(document.createElement('br'));return;}
+    const cls = n.nodeType===1 ? n.className : '';
+    n.textContent.split(/(\s+)/).forEach(tok=>{
+      if(!tok) return;
+      if(/^\s+$/.test(tok)){el.appendChild(document.createTextNode(' '));return;}
+      const w=document.createElement('span');w.className='w';
+      const wi=document.createElement('span');wi.className='wi'+(cls?' '+cls:'');wi.textContent=tok;
+      w.appendChild(wi);el.appendChild(w);
+    });
+  });
+  el._w=[...el.querySelectorAll('.wi')];
+}
+// word-by-word rise in, rise out
+function words(el,t,t0,t1=1e9,{st=.055,d=.7}={}){
+  const n=el._w.length;
+  el.style.visibility = (t<t0 || t>t1+d+n*st) ? 'hidden':'visible';
+  el._w.forEach((w,i)=>{
+    const a=eo5(prog(t,t0+i*st,t0+i*st+d));
+    const b=eio(prog(t,t1+i*st*.5,t1+i*st*.5+d*.75));
+    w.style.transform=`translateY(${((1-a)-b)*120}%)`;
+  });
+}
+// generic fade/slide in & out
+function show(el,t,t0,t1=1e9,{dy=40,dx=0,d=.6,s0=1,s1=1,ease=eo}={}){
+  const a=ease(prog(t,t0,t0+d)), b=eio(prog(t,t1,t1+d*.75));
+  const o=a*(1-b);
+  el.style.opacity=o; el.style.visibility=o<=0.001?'hidden':'visible';
+  const s=lerp(s0,1,a)*lerp(1,s1,b);
+  el.style.transform=`translate(${dx*(1-a)-dx*.6*b}px,${dy*(1-a)-dy*.6*b}px) scale(${s})`;
+  return o;
+}
+const draw = (p,el) => {el.style.strokeDasharray='1';el.style.strokeDashoffset=String(1-p);};
+
+// ---------- brand ----------
+function markSVG(h, fill){
+  const w=h*84/70;
+  return `<svg width="${w}" height="${h}" viewBox="0 0 84 70" style="display:block;overflow:hidden"><g class="mkL"><path d="M0 70 V0 A38 12 0 0 1 38 12 V70 Z" fill="${fill}"/></g><g class="mkR"><path d="M40 70 V0 A43 33 0 0 1 83 33 V70 Z" fill="${fill}"/></g></svg>`;
+}
+function lockup(parent, h, color, byColor){
+  const L=div('', '', parent, 'lockup');
+  L.style.gap=(h*.24)+'px';
+  div(markSVG(h, color), '', L);
+  const wm=div('', '', L, 'wm');
+  const nv=div('', `font-size:${h*.82}px;color:${color}`, wm, 'nv');
+  'nuvanta'.split('').forEach(c=>{const s=document.createElement('span');s.className='w';s.style.paddingBottom='0.2em';s.innerHTML=`<span class="wi">${c}</span>`;nv.appendChild(s);});
+  nv._w=[...nv.querySelectorAll('.wi')];
+  const by=div('by Rupeeflo', `font-size:${h*.36}px;color:${byColor}`, wm, 'by');
+  return {L, nv, by, mL:L.querySelector('.mkL'), mR:L.querySelector('.mkR')};
+}
+function lockAnim(k,t,t0){
+  // arches rise out of a baseline, wordmark letters rise, byline fades
+  const a=eo5(prog(t,t0,t0+.7)), b=eo5(prog(t,t0+.12,t0+.82));
+  k.mL.setAttribute('transform',`translate(0 ${(1-a)*72})`);
+  k.mR.setAttribute('transform',`translate(0 ${(1-b)*72})`);
+  k.nv._w.forEach((w,i)=>{const p=eo5(prog(t,t0+.35+i*.04,t0+.95+i*.04));w.style.transform=`translateY(${(1-p)*110}%)`;});
+  const c=eo(prog(t,t0+.8,t0+1.4)); k.by.style.opacity=c; k.by.style.transform=`translateY(${(1-c)*14}px)`;
+}
+
+// ---------- icons (48x48, stroked) ----------
+const ICON = {
+  globe:'<circle cx="24" cy="24" r="17"/><ellipse cx="24" cy="24" rx="7.5" ry="17"/><path d="M7 24 H41 M10 15 H38 M10 33 H38"/>',
+  gem:'<path d="M13 9 H35 L43 19 L24 40 L5 19 Z"/><path d="M5 19 H43 M18 9 L24 19 L30 9 M17 19 L24 40 L31 19"/>',
+  home:'<path d="M7 22 L24 8 L41 22"/><path d="M11 19 V40 H37 V19"/><path d="M20 40 V29 H28 V40"/>',
+  pie:'<circle cx="24" cy="25" r="16"/><path d="M24 9 V25 H40"/><path d="M28 5 A16 16 0 0 1 44 21 H28 Z" fill="#C8CCF2" stroke="none"/>',
+  office:'<rect x="12" y="7" width="24" height="34" rx="2"/><path d="M6 41 H42 M18 14 H21 M27 14 H30 M18 21 H21 M27 21 H30 M18 28 H21 M27 28 H30 M21 41 V35 H27 V41"/>',
+  bank:'<path d="M6 18 L24 8 L42 18 Z"/><path d="M10 22 V35 M18 22 V35 M30 22 V35 M38 22 V35 M6 40 H42"/>',
+  candles:'<path d="M12 8 V40 M24 6 V38 M36 12 V42"/><rect x="8" y="14" width="8" height="16" rx="1.5" fill="#C8CCF2"/><rect x="20" y="12" width="8" height="12" rx="1.5"/><rect x="32" y="20" width="8" height="14" rx="1.5" fill="#C8CCF2"/>',
+  case:'<rect x="6" y="15" width="36" height="25" rx="4"/><path d="M17 15 V10 H31 V15 M6 25 H42 M22 25 V29 H26 V25"/>',
+  layers:'<path d="M24 7 L43 17 L24 27 L5 17 Z"/><path d="M5 24 L24 34 L43 24 M5 31 L24 41 L43 31"/>',
+  face:'<path d="M8 16 V10 Q8 8 10 8 H16 M32 8 H38 Q40 8 40 10 V16 M40 32 V38 Q40 40 38 40 H32 M16 40 H10 Q8 40 8 38 V32"/><circle cx="24" cy="21" r="6"/><path d="M14 35 C16 29 32 29 34 35"/>',
+  video:'<rect x="5" y="13" width="28" height="22" rx="4"/><path d="M33 21 L43 15 V33 L33 27"/><circle cx="19" cy="21" r="3.5"/><path d="M12 31 C14 27 24 27 26 31"/>',
+  stamp:'<path d="M19 6 H29 L27 20 H21 Z"/><path d="M10 26 Q10 22 14 22 H34 Q38 22 38 26 V32 H10 Z"/><path d="M8 40 H40"/>',
+  doc:'<path d="M12 5 H29 L38 14 V43 H12 Z"/><path d="M29 5 V14 H38 M18 22 H32 M18 29 H32 M18 36 H27"/>',
+};
+const icon = (k, size=56) => `<svg class="icon" style="width:${size}px;height:${size}px" viewBox="0 0 48 48">${ICON[k]}</svg>`;
+const CHECK = (cls='') => `<svg class="ck ${cls}" viewBox="0 0 44 44"><circle cx="22" cy="22" r="20" fill="#2433CA" class="ckbg"/><path d="M13 22.5 L19.5 29 L31 16" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" pathLength="1" class="ckp"/></svg>`;
+function checkAnim(svg,t,t0){
+  const a=back(prog(t,t0,t0+.45)); const bg=svg.querySelector('.ckbg');
+  bg.setAttribute('r', String(Math.max(0,20*a)));
+  draw(eo(prog(t,t0+.2,t0+.6)), svg.querySelector('.ckp'));
+}
+
+// =====================================================================
+// build
+// =====================================================================
+document.querySelectorAll('.h1,.h2,.cap').forEach(el=>{ if(!el.closest('.card')) split(el); }); split($('s2eb'));
+
+// ---- S1 network ----
+const net=$('net'); const HUB={x:960,y:430};
+const CITIES=[['New York',230,420],['London',560,170],['Toronto',360,660],['Dubai',1360,170],['Singapore',1690,420],['Sydney',1560,660]];
+const S1=[];
+// faint ambient dots
+for(let i=0;i<46;i++){const x=(i*397)%1920, y=60+((i*233)%640); if(Math.hypot(x-HUB.x,y-HUB.y)<160)continue; S1.push({amb:svgEl('circle',{cx:x,cy:y,r:3,fill:'#C8CCF2'},net),i});}
+CITIES.forEach(([name,x,y],i)=>{
+  const mx=(x+HUB.x)/2, my=(y+HUB.y)/2 - 170 - (i%2)*40;
+  const path=svgEl('path',{d:`M${x} ${y} Q${mx} ${my} ${HUB.x} ${HUB.y}`,fill:'none',stroke:'#2433CA','stroke-width':2.5,'stroke-linecap':'round',pathLength:1,opacity:.55},net);
+  const len=path.getTotalLength();
+  const dot=svgEl('circle',{r:7,fill:'#2433CA'},net);
+  const g=svgEl('g',{},net);
+  svgEl('circle',{cx:x,cy:y,r:13,fill:'#fff',stroke:'#2433CA','stroke-width':4},g);
+  const lab=svgEl('text',{x:x,y:y+(y<HUB.y-100?-30:46),'text-anchor':'middle','font-size':28,'font-weight':500,fill:'#3C3F4D','font-family':'GS'},g); lab.textContent=name;
+  S1.push({path,len,dot,g,i,x,y});
+});
+const ringA=svgEl('circle',{cx:HUB.x,cy:HUB.y,r:30,fill:'none',stroke:'#2433CA','stroke-width':3},net);
+const ringB=svgEl('circle',{cx:HUB.x,cy:HUB.y,r:30,fill:'none',stroke:'#2433CA','stroke-width':3},net);
+const hubG=svgEl('g',{},net);
+svgEl('circle',{cx:HUB.x,cy:HUB.y,r:34,fill:'#2433CA'},hubG);
+svgEl('circle',{cx:HUB.x,cy:HUB.y,r:12,fill:'#fff'},hubG);
+const hubT=svgEl('text',{x:HUB.x,y:HUB.y+90,'text-anchor':'middle','font-size':38,'font-weight':700,fill:'#2433CA','font-family':'GS','letter-spacing':'-0.5'},hubG); hubT.textContent='GIFT City';
+
+// ---- S2 / S9 lockups ----
+const L2=lockup($('s2lock'),150,'#fff','rgba(255,255,255,.82)');
+const L9=lockup($('s9lock'),170,'#fff','rgba(255,255,255,.82)');
+div(markSVG(28,'#2433CA')+'<span style="font-size:28px;font-weight:500;letter-spacing:-0.03em;margin-left:12px">nuvanta</span>','display:flex;align-items:center',$('s4mini'));
+
+// ---- S3 investor cards ----
+const INV=[['globe','NRI'],['gem','HNI'],['home','Family Office'],['pie','Fund'],['office','Corporate']];
+const S3C=INV.map(([ic,label],i)=>{
+  const c=div(`<div class="iconwrap">${icon(ic)}</div><div style="font-size:36px;font-weight:600;letter-spacing:-0.02em">${label}</div>`,
+    `left:${138+i*336}px;top:440px;width:300px;height:300px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:34px`, $('s3cards'),'card');
+  return c;
+});
+
+// ---- S4 stepper ----
+const stp=$('stepper'); const SX=i=>360+i*300, SY=60;
+svgEl('line',{x1:SX(0),y1:SY,x2:SX(4),y2:SY,stroke:'#E1E4EF','stroke-width':6,'stroke-linecap':'round'},stp);
+const stFill=svgEl('line',{x1:SX(0),y1:SY,x2:SX(0),y2:SY,stroke:'#2433CA','stroke-width':6,'stroke-linecap':'round'},stp);
+const STEPN=['Upload','Verify','Notarise','E-sign','Activate'];
+const STN=STEPN.map((n,i)=>{
+  const g=svgEl('g',{},stp);
+  const pulse=svgEl('circle',{cx:SX(i),cy:SY,r:30,fill:'none',stroke:'#2433CA','stroke-width':3},g);
+  const c=svgEl('circle',{cx:SX(i),cy:SY,r:30,fill:'#fff',stroke:'#E1E4EF','stroke-width':4},g);
+  const num=svgEl('text',{x:SX(i),y:SY+10,'text-anchor':'middle','font-size':28,'font-weight':700,fill:'#A7ABBD','font-family':'GS'},g); num.textContent=i+1;
+  const ck=svgEl('path',{d:`M${SX(i)-11} ${SY} L${SX(i)-3} ${SY+8} L${SX(i)+12} ${SY-8}`,fill:'none',stroke:'#fff','stroke-width':5,'stroke-linecap':'round','stroke-linejoin':'round',pathLength:1},g);
+  const lab=svgEl('text',{x:SX(i),y:SY+76,'text-anchor':'middle','font-size':28,'font-weight':600,fill:'#A7ABBD','font-family':'GS'},g); lab.textContent=n;
+  return {g,pulse,c,num,ck,lab};
+});
+
+// ---- S4 panels ----
+const P=$('panels');
+function panel(){return div('', 'position:absolute;inset:0', P);}
+const docMock=(x,y,w,h)=>`<div class="abs" style="left:${x}px;top:${y}px;width:${w}px;height:${h}px;background:#fff;border:2px solid #E1E4EF;border-radius:14px">
+  ${[0,1,2,3,4,5].map(k=>`<div class="abs" style="left:28px;top:${36+k*30}px;width:${k%3==2?w*.4:w-56}px;height:10px;border-radius:5px;background:#E9EBF3"></div>`).join('')}</div>`;
+// upload
+const pU=panel();
+const tiles=['Passport','Address proof'].map((n,i)=>{
+  const t=div(`<div style="width:64px;height:80px;margin:44px auto 0">${icon('doc',64).replace('width:64px;height:64px','width:64px;height:80px')}</div>
+    <div style="text-align:center;font-size:32px;font-weight:600;margin-top:18px">${n}</div>
+    <div class="abs" style="left:40px;right:40px;top:226px;height:12px;border-radius:6px;background:#DCE0F5"><div class="bar" style="height:12px;border-radius:6px;background:#2433CA;width:0"></div></div>
+    <div class="abs tck" style="right:18px;top:18px">${CHECK()}</div>`,
+    `position:absolute;left:${110+i*420}px;top:80px;width:360px;height:300px;background:#EEF0FC;border-radius:22px`, pU);
+  return t;
+});
+// verify
+const pV=panel();
+const pass=div(`<div class="abs" style="left:28px;top:40px;width:120px;height:150px;border-radius:12px;background:#C8CCF2;overflow:hidden">
+    <div class="abs" style="left:35px;top:28px;width:50px;height:50px;border-radius:25px;background:#9AA1E6"></div>
+    <div class="abs" style="left:15px;top:92px;width:90px;height:80px;border-radius:45px;background:#9AA1E6"></div></div>
+  ${[0,1,2,3].map(k=>`<div class="abs" style="left:176px;top:${48+k*34}px;width:${[170,130,180,110][k]}px;height:12px;border-radius:6px;background:#D3D7EE"></div>`).join('')}
+  <div class="abs" style="left:28px;top:220px;right:28px;height:10px;border-radius:5px;background:#D3D7EE"></div>
+  <div class="abs" style="left:28px;top:244px;right:60px;height:10px;border-radius:5px;background:#D3D7EE"></div>
+  <div class="abs scan" style="left:-10px;right:-10px;height:4px;background:#2433CA;box-shadow:0 0 24px 6px rgba(36,51,202,.35)"></div>`,
+  'position:absolute;left:80px;top:90px;width:400px;height:290px;background:#EEF0FC;border-radius:20px;overflow:hidden', pV);
+const aiChip=div('AI verification','position:absolute;left:560px;top:72px;background:#EEF0FC;color:#2433CA',pV,'chip');
+const vRows=['Identity matched','Document authentic','Address verified'].map((n,i)=>div(`${CHECK()}<span>${n}</span>`,`position:absolute;left:560px;top:${170+i*76}px`,pV,'row'));
+// notarise
+const pN=panel();
+div(docMock(0,0,280,380),'position:absolute;left:150px;top:42px',pN);
+const seal=div(`<svg width="170" height="170" viewBox="0 0 170 170"><circle cx="85" cy="85" r="78" fill="rgba(255,255,255,.85)" stroke="#2433CA" stroke-width="6"/><circle cx="85" cy="85" r="62" fill="none" stroke="#2433CA" stroke-width="2.5" stroke-dasharray="4 6"/>
+  <path d="M66 70 L80 84 L106 58" fill="none" stroke="#2433CA" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="85" y="118" text-anchor="middle" font-size="17" font-weight="700" fill="#2433CA" font-family="GS" letter-spacing="2">NOTARISED</text></svg>`,
+  'position:absolute;left:310px;top:230px;width:170px;height:170px',pN);
+const ripple=div('','position:absolute;left:310px;top:230px;width:170px;height:170px;border-radius:50%;border:3px solid #2433CA',pN);
+const nRows=['Notary verified','Digitally sealed'].map((n,i)=>div(`${CHECK()}<span>${n}</span>`,`position:absolute;left:560px;top:${170+i*76}px`,pN,'row'));
+// e-sign
+const pE=panel();
+div(docMock(0,0,280,380),'position:absolute;left:150px;top:42px',pE);
+div('','position:absolute;left:180px;top:370px;width:220px;height:2px;background:#A7ABBD',pE);
+const sig=div(`<svg width="240" height="90" viewBox="0 0 240 90" style="overflow:visible"><path pathLength="1" d="M8 62 C22 20 40 8 42 30 C44 52 30 72 40 70 C52 68 58 30 70 34 C80 38 72 64 84 62 C98 60 102 36 112 40 C122 44 116 64 128 60 C142 56 150 30 164 34 C176 38 168 62 182 58 C196 54 206 40 230 42" fill="none" stroke="#2433CA" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
+  'position:absolute;left:170px;top:282px',pE);
+const dsc=div(`<svg width="30" height="30" viewBox="0 0 48 48" class="icon" style="width:30px;height:30px;stroke:#fff"><rect x="10" y="21" width="28" height="21" rx="4"/><path d="M16 21 V15 A8 8 0 0 1 32 15 V21"/></svg>DSC signed`,
+  'position:absolute;left:560px;top:72px;background:#2433CA;color:#fff',pE,'chip');
+const eRows=['Signed with DSC','Signature verified'].map((n,i)=>div(`${CHECK()}<span>${n}</span>`,`position:absolute;left:560px;top:${170+i*76}px`,pE,'row'));
+// activate
+const pA=panel();
+const burst=svgEl('svg',{width:1000,height:464,viewBox:'0 0 1000 464',style:'position:absolute;left:0;top:0'});pA.appendChild(burst);
+const BURST=[...Array(14)].map((_,i)=>svgEl('circle',{r:i%2?6:9,fill:i%3?'#2433CA':'#C8CCF2'},burst));
+const bigck=div(`<svg width="150" height="150" viewBox="0 0 150 150"><circle cx="75" cy="75" r="70" fill="#2433CA" class="bc"/><path pathLength="1" class="bp" d="M45 77 L66 98 L106 56" fill="none" stroke="#fff" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
+  'position:absolute;left:425px;top:60px;width:150px;height:150px',pA);
+const kyc=div('KYC cleared','position:absolute;left:0;right:0;top:244px;text-align:center;font-size:52px;font-weight:600;letter-spacing:-0.02em',pA);
+const act=div('<span class="chip" style="background:#2433CA;color:#fff;height:64px;font-size:30px;padding:0 34px">Account activated</span>','position:absolute;left:0;right:0;top:336px;text-align:center',pA);
+const PANELS=[pU,pV,pN,pE,pA];
+
+const CAPS=['Passport and address proof.','AI-powered verification.','Digital notarisation.','DSC-based signing.','KYC cleared. Account activated.'].map(s=>{
+  const c=div(s,'top:878px','', 'center cap'); $('s4caps').appendChild(c); split(c); return c;});
+
+// ---- S5 ----
+const OLD=['Forms','Notary','Attestation','Courier','Review','Resubmit','Activate'];
+const oldEls=[]; const oldArrows=[];
+OLD.forEach((n,i)=>{ if(i){oldArrows.push(div('&rarr;','', $('s5old'),'arrow'));} oldEls.push(div(n,'',$('s5old'),'pill')); });
+const loopPath=svgEl('path',{fill:'none',stroke:'#A7ABBD','stroke-width':3,'stroke-dasharray':'8 8','stroke-linecap':'round'},$('s5loop'));
+const loopHead=svgEl('path',{fill:'none',stroke:'#A7ABBD','stroke-width':3,'stroke-linecap':'round','stroke-linejoin':'round'},$('s5loop'));
+const loopTxt=svgEl('text',{'text-anchor':'middle','font-size':22,'font-weight':600,fill:'#A7ABBD','font-family':'GS','letter-spacing':2},$('s5loop')); loopTxt.textContent='REPEAT';
+const strike=svgEl('line',{x1:200,y1:5,x2:1720,y2:5,stroke:'#2433CA','stroke-width':5,'stroke-linecap':'round',pathLength:1},$('s5strike'));
+const newPill=div(`${markSVG(34,'#fff')}<span style="margin-left:14px;font-size:36px;font-weight:500;letter-spacing:-0.03em">nuvanta</span>`,'background:#2433CA;border-color:#2433CA;color:#fff;height:96px;padding:0 40px;border-radius:48px',$('s5new'),'pill');
+const newArrow=div('&rarr;','font-size:44px;color:#2433CA;width:60px',$('s5new'),'arrow');
+const sixty=div('<span id="sixN">60</span> minutes','font-size:132px;font-weight:700;letter-spacing:-0.04em;color:#2433CA;line-height:1',$('s5new'));
+
+// ---- S6 papers ----
+const PAPERS=[[-560,-150,-14],[-420,170,9],[-300,-260,-6],[420,-220,12],[560,90,-10],[820,230,7],[-820,-210,-4],[180,-330,5],[-700,60,4],[700,-60,-6]].map(([x,y,r],i)=>{
+  const p=div(docMock(0,0,150,196).replace('left:0px;top:0px','left:0;top:0'),`position:absolute;left:${960+x-75}px;top:${375+y-98}px;width:150px;height:196px`, $('papers'));
+  p._d={x,y,r}; return p;});
+
+// ---- S7 institutions ----
+const INST=[['bank','IFSC Banks'],['candles','Brokers & Trading Platforms'],['case','PMS Providers'],['layers','AIFs & FMEs']];
+const S7C=INST.map(([ic,label],i)=>div(`<div class="iconwrap">${icon(ic)}</div><div style="font-size:36px;font-weight:600;letter-spacing:-0.02em;line-height:1.15;max-width:300px">${label}</div>`,
+  `left:${152+i*412}px;top:420px;width:380px;height:330px;display:flex;flex-direction:column;align-items:flex-start;justify-content:space-between;padding:44px;box-sizing:border-box`, $('s7cards'),'card'));
+
+// ---- S8 three ways ----
+const WAYS=[['face','Aadhaar Face Authentication','For Aadhaar holders'],['video','V-CIP','For Aadhaar + an active Indian mobile'],['stamp','E-notarisation','For investors anywhere else']];
+const S8C=WAYS.map(([ic,title,desc],i)=>div(`<div style="display:flex;justify-content:space-between;align-items:flex-start;width:100%"><div class="iconwrap">${icon(ic)}</div><div style="font-size:30px;font-weight:700;color:#C8CCF2" class="num">0${i+1}</div></div>
+  <div><div style="font-size:42px;font-weight:600;letter-spacing:-0.02em;line-height:1.12">${title}</div><div style="font-size:30px;color:#6B6F80;margin-top:16px;line-height:1.3">${desc}</div></div>`,
+  `left:${140+i*560}px;top:330px;width:520px;height:460px;display:flex;flex-direction:column;justify-content:space-between;padding:48px;box-sizing:border-box;border:3px solid transparent`, $('s8cards'),'card'));
+
+// =====================================================================
+// render(t): pure function of time
+// =====================================================================
+function render(t){
+  // scene visibility
+  for(const id in SCENES){const [a,b]=SCENES[id]; $(id).style.display=(t>=a&&t<b)?'block':'none';}
+  $('stage').style.backgroundPosition=`${-t*6}px ${-t*3}px`;
+
+  // wipe overlay
+  let wv=false;
+  WIPES.forEach(w=>{ if(t>=w && t<w+0.85){ wv=true;
+    const a=eio(prog(t,w,w+.75)), b=eio(prog(t,w+.07,w+.82));
+    $('wipeL').style.transform=`translateY(${lerp(1080,-300,a)}px)`;
+    $('wipeR').style.transform=`translateY(${lerp(1080,-700,b)}px)`; }});
+  $('wipe').style.visibility=wv?'visible':'hidden';
+
+  // ---- S1 ----
+  if(t<SCENES.s1[1]){
+    const L=t;
+    $('net').style.transform=`scale(${1+L*0.012})`;
+    S1.forEach(o=>{
+      if(o.amb){o.amb.setAttribute('opacity', String(.9*eo(prog(L,.1+(o.i%10)*.08,.8+(o.i%10)*.08))));return;}
+      const a=back(prog(L,.15+o.i*.14,.6+o.i*.14));
+      o.g.setAttribute('opacity',String(clamp(a))); o.g.setAttribute('transform',`translate(${o.x} ${o.y}) scale(${Math.max(0,a)}) translate(${-o.x} ${-o.y})`);
+      const d=eio(prog(L,.5+o.i*.16,1.7+o.i*.16)); draw(d,o.path);
+      if(d>=1){const q=((L-1.7-o.i*.16)*.55)%1; const p=o.path.getPointAtLength(o.len*eio(q)); o.dot.setAttribute('cx',p.x);o.dot.setAttribute('cy',p.y);o.dot.setAttribute('opacity',String(Math.sin(Math.PI*q)));}
+      else o.dot.setAttribute('opacity','0');
+    });
+    const h=back(prog(L,.3,.9)); hubG.setAttribute('transform',`translate(960 430) scale(${Math.max(0,h)}) translate(-960 -430)`);
+    [ringA,ringB].forEach((r,k)=>{const q=((L*.7)+k*.5)%1; r.setAttribute('r',34+q*90); r.setAttribute('opacity',String((1-q)*.5*clamp(L-.6)));});
+    words($('s1h1'),L,.5,3.5);
+    words($('s1h2'),L,3.9);
+  }
+
+  // ---- S2 ----
+  if(t>=SCENES.s2[0] && t<SCENES.s2[1]){
+    const L=t-SCENES.s2[0];
+    words($('s2eb'),L,.15,2.6);
+    lockAnim(L2,L,.25);
+    const m=eio(prog(L,2.7,3.4));
+    $('s2lock').style.transform=`translateY(${-m*120}px) scale(${lerp(1,.82,m)})`;
+    words($('s2l1'),L,2.9); words($('s2l2'),L,3.7);
+    const ex=eio(prog(L,6.2,7.0));
+    $('s2').style.transform=`translateY(${-ex*1080}px)`;
+  }
+
+  // ---- S3 ----
+  if(t>=SCENES.s3[0] && t<SCENES.s3[1]){
+    const L=t-SCENES.s3[0];
+    words($('s3h'),L,.7,7.1);
+    S3C.forEach((c,i)=>{
+      const t0=1.6+i*.5; const a=back(prog(L,t0,t0+.6)); const o=clamp(prog(L,t0,t0+.3));
+      const ex=eio(prog(L,7.0+i*.04,7.7+i*.04));
+      const dx=(960-(138+i*336+150))*ex;
+      c.style.opacity=o*(1-ex); c.style.transform=`translate(${dx}px,${(1-a)*70}px) scale(${lerp(.92,1,a)*lerp(1,.4,ex)})`;
+    });
+  }
+
+  // ---- S4 ----
+  if(t>=SCENES.s4[0] && t<SCENES.s4[1]){
+    const L=t-SCENES.s4[0];
+    words($('s4h'),L,.3,2.6);
+    const step=STEPS.filter(s=>t>=s-.1).length-1; // -1 before first
+    const ui=show($('s4ui'),t,STEPS[0]-.5,SCENES.s4[1]-.6,{dy:50,d:.8});
+    // stepper
+    let fillX=SX(0);
+    STN.forEach((n,i)=>{
+      const on=t>=STEPS[i]-.1, done=i<4 ? t>=STEPS[Math.min(i+1,4)]-.1 : t>=STEPS[4]+.9;
+      const pa=eo(prog(t,STEPS[i]-.1,STEPS[i]+.3));
+      n.c.setAttribute('fill', done?'#2433CA':'#fff');
+      n.c.setAttribute('stroke', on?'#2433CA':'#E1E4EF');
+      n.num.setAttribute('fill', on?'#2433CA':'#A7ABBD'); n.num.setAttribute('opacity', done?0:1);
+      n.lab.setAttribute('fill', on?'#12131A':'#A7ABBD');
+      draw(done?eo(prog(t,(i<4?STEPS[i+1]:STEPS[4]+.9)-.1,(i<4?STEPS[i+1]:STEPS[4]+.9)+.3)):0, n.ck);
+      const q=((t-STEPS[i])*.9)%1; const pulsing=on&&!done;
+      n.pulse.setAttribute('r',30+q*26); n.pulse.setAttribute('opacity',pulsing?String((1-q)*.5*pa):'0');
+      if(i>0 && on) fillX=lerp(SX(i-1),SX(i),eio(prog(t,STEPS[i]-.5,STEPS[i]+.1)));
+    });
+    stFill.setAttribute('x2',fillX);
+    $('s4stepno').textContent= step>=0 ? `Investor onboarding · Step ${step+1} of 5` : 'Investor onboarding';
+    // panels
+    PANELS.forEach((p,i)=>{
+      const s0=STEPS[i], s1=i<4?STEPS[i+1]-.15:1e9;
+      show(p,t,s0-.05,s1,{dx:60,dy:0,d:.5});
+    });
+    CAPS.forEach((c,i)=>words(c,t,STEPS[i]+.05,i<4?STEPS[i+1]-.3:SCENES.s4[1]-.7,{st:.05,d:.55}));
+    // upload
+    tiles.forEach((tl,i)=>{const t0=STEPS[0]+i*.45; show(tl,t,t0,1e9,{dy:60,d:.6});
+      tl.querySelector('.bar').style.width=(100*eio(prog(t,t0+.35,t0+1.6)))+'%';
+      checkAnim(tl.querySelector('.ck'),t,t0+1.6);});
+    // verify
+    const V0=STEPS[1];
+    pass.querySelector('.scan').style.top=(290*(0.5-0.5*Math.cos(Math.PI*2*clamp((t-V0)/1.4,0,2)/2)))+'px';
+    pass.querySelector('.scan').style.opacity=t<V0+2.8?1:Math.max(0,1-(t-V0-2.8)*4);
+    show(aiChip,t,V0+.25,1e9,{dy:20,d:.5});
+    vRows.forEach((r,i)=>{show(r,t,V0+.6+i*.45,1e9,{dx:30,dy:0,d:.5}); checkAnim(r.querySelector('.ck'),t,V0+.75+i*.45);});
+    // notarise
+    const N0=STEPS[2]+.45; const sp=prog(t,N0,N0+.28);
+    seal.style.opacity=clamp(sp*3); seal.style.transform=`scale(${lerp(1.9,1,eio(sp))}) rotate(-12deg)`;
+    const rp=prog(t,N0+.28,N0+1.1); ripple.style.opacity=t<N0+.28?0:(1-rp)*.6; ripple.style.transform=`scale(${1+rp*.8})`;
+    nRows.forEach((r,i)=>{show(r,t,N0+.5+i*.45,1e9,{dx:30,dy:0,d:.5}); checkAnim(r.querySelector('.ck'),t,N0+.65+i*.45);});
+    // e-sign
+    const E0=STEPS[3];
+    draw(eio(prog(t,E0+.3,E0+1.6)), sig.querySelector('path'));
+    show(dsc,t,E0+1.4,1e9,{dy:0,d:.5,s0:.6,ease:back});
+    eRows.forEach((r,i)=>{show(r,t,E0+1.7+i*.4,1e9,{dx:30,dy:0,d:.5}); checkAnim(r.querySelector('.ck'),t,E0+1.85+i*.4);});
+    // activate
+    const A0=STEPS[4]+.1;
+    const bc=back(prog(t,A0,A0+.5)); bigck.querySelector('.bc').setAttribute('r',String(Math.max(0,70*bc)));
+    draw(eo(prog(t,A0+.3,A0+.75)), bigck.querySelector('.bp'));
+    BURST.forEach((b,i)=>{const ang=i/14*Math.PI*2+.2, q=eo(prog(t,A0+.3,A0+1.3)); const rr=80+q*(110+(i%3)*40);
+      b.setAttribute('cx',500+Math.cos(ang)*rr); b.setAttribute('cy',135+Math.sin(ang)*rr*.8); b.setAttribute('opacity',String(q>0?(1-q):0));});
+    show(kyc,t,A0+.4,1e9,{dy:24,d:.5});
+    show(act,t,A0+1.5,1e9,{dy:0,d:.5,s0:.7,ease:back});
+    // exit
+    const ex=eio(prog(L,SCENES.s4[1]-SCENES.s4[0]-.6,SCENES.s4[1]-SCENES.s4[0]));
+    $('s4').style.opacity=1-ex; $('s4').style.transform=`scale(${1-ex*.04})`;
+  }
+
+  // ---- S5 ----
+  if(t>=SCENES.s5[0] && t<SCENES.s5[1]){
+    const L=t-SCENES.s5[0];
+    words($('s5h'),L,.25);
+    const up=eio(prog(L,2.5,3.2));
+    $('s5hw').style.transform=`translateY(${-up*270}px) scale(${lerp(1,.62,up)})`;
+    show($('s5oldl'),L,3.0,1e9,{dy:16,d:.5});
+    const T0=3.2;
+    oldEls.forEach((e,i)=>{const t0=T0+i*.42; show(e,L,t0,1e9,{dy:30,d:.5,s0:.9,ease:back}); if(i) show(oldArrows[i-1],L,t0-.12,1e9,{dx:-16,dy:0,d:.4});});
+    // loop arrow from Resubmit back to Review (measure after layout)
+    const rv=oldEls[4].getBoundingClientRect(), rs=oldEls[5].getBoundingClientRect(), sr=$('stage').getBoundingClientRect();
+    const x1=rs.left-sr.left+rs.width/2, x0=rv.left-sr.left+rv.width/2, y=40;
+    loopPath.setAttribute('d',`M${x1} ${y} C${x1} ${y-60} ${x0} ${y-60} ${x0} ${y-4}`);
+    loopHead.setAttribute('d',`M${x0-10} ${y-16} L${x0} ${y-2} L${x0+10} ${y-16}`);
+    loopTxt.setAttribute('x',(x0+x1)/2); loopTxt.setAttribute('y',y-58);
+    const lp=show($('s5loop'),L,T0+5*.42+.3,1e9,{dy:10,d:.5});
+    // strike + dim
+    const sk=eio(prog(L,6.6,7.2)); draw(sk,strike); $('s5strike').style.opacity=sk>0?1:0;
+    $('s5old').style.opacity=lerp(1,.4,sk); $('s5loop').style.opacity=lerp(lp,.4*lp,sk); $('s5oldl').style.opacity=lerp(1,.4,sk);
+    // new way
+    show($('s5newl'),L,7.4,1e9,{dy:16,d:.5});
+    show(newPill,L,7.6,1e9,{dx:-40,dy:0,d:.6});
+    show(newArrow,L,7.95,1e9,{dx:-20,dy:0,d:.4});
+    show(sixty,L,8.1,1e9,{dx:-30,dy:0,d:.6});
+    $('sixN').textContent=String(Math.round(60*eo(prog(L,8.1,9.0))));
+    const ex=eio(prog(L,SCENES.s5[1]-SCENES.s5[0]-.5,SCENES.s5[1]-SCENES.s5[0]));
+    $('s5').style.opacity=1-ex;
+  }
+
+  // ---- S6 ----
+  if(t>=SCENES.s6[0] && t<SCENES.s6[1]){
+    const L=t-SCENES.s6[0];
+    const sh=back(prog(L,.15,.75)); $('shield').style.transform=`scale(${Math.max(0,sh)})`;
+    draw(eo(prog(L,.5,.95)),$('shck'));
+    PAPERS.forEach((p,i)=>{
+      const a=eo(prog(L,.05+i*.04,.55+i*.04)); const f=eio(prog(L,2.3+i*.05,3.4+i*.05));
+      const d=p._d, k=1+f*1.6;
+      p.style.opacity=a*(1-f);
+      p.style.transform=`translate(${d.x*(k-1)-d.x*(1-a)*.3}px,${d.y*(k-1)-d.y*(1-a)*.3 - f*120}px) rotate(${d.r+f*d.r*3}deg) scale(${lerp(.8,1,a)})`;
+    });
+    const pulse=prog(L,2.4,3.2); $('shield').style.filter=`drop-shadow(0 0 ${Math.sin(Math.PI*pulse)*40}px rgba(36,51,202,.55))`;
+    words($('s6a'),L,.5); words($('s6b'),L,2.5,1e9,{st:.08,d:.8});
+    const ex=eio(prog(L,SCENES.s6[1]-SCENES.s6[0]-.5,SCENES.s6[1]-SCENES.s6[0]));
+    $('s6').style.opacity=1-ex;
+  }
+
+  // ---- S7 ----
+  if(t>=SCENES.s7[0] && t<SCENES.s7[1]){
+    const L=t-SCENES.s7[0];
+    words($('s7h'),L,.3);
+    S7C.forEach((c,i)=>show(c,L,2.0+i*.95,1e9,{dy:70,d:.7,s0:.94,ease:back}));
+    const ex=eio(prog(L,SCENES.s7[1]-SCENES.s7[0]-.6,SCENES.s7[1]-SCENES.s7[0]));
+    $('s7').style.opacity=1-ex; $('s7').style.transform=`translateY(${-ex*40}px)`;
+  }
+
+  // ---- S8 ----
+  if(t>=SCENES.s8[0] && t<SCENES.s8[1]){
+    const L=t-SCENES.s8[0];
+    words($('s8h'),L,.3);
+    const T=[1.6,4.4,7.4];
+    S8C.forEach((c,i)=>{
+      show(c,L,T[i],1e9,{dy:70,d:.7,s0:.94,ease:back});
+      const active = L>=T[i] && (i==2 || L<T[i+1]);
+      const k=active?eo(prog(L,T[i]+.2,T[i]+.6)):(L>=T[i]?1-eo(prog(L,T[i+1],T[i+1]+.4)):0);
+      c.style.borderColor=`rgba(36,51,202,${k})`;
+      c.querySelector('.num').style.color=k>.5?'#2433CA':'#C8CCF2';
+    });
+  }
+
+  // ---- S9 ----
+  if(t>=SCENES.s9[0] && t<SCENES.s9[1]){
+    const L=t-SCENES.s9[0];
+    words($('s9a'),L,.4,3.5); words($('s9b'),L,1.5,3.6);
+    words($('s9w'),L,4.1,1e9);
+    lockAnim(L9,L,4.3);
+  }
+}
+window.render=render; window.DURATION=DURATION;
+const qt=new URLSearchParams(location.search).get('t');
+document.fonts.ready.then(()=>{ render(qt?parseFloat(qt):0); window.READY=true; });
+</script>
+</body>
+</html>
