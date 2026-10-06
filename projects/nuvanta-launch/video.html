@@ -60,7 +60,7 @@ html,body{margin:0;background:#000;}
 
 <!-- S4: workflow -->
 <div class="scene" id="s4" style="z-index:3">
-  <div class="center h1" id="s4h" style="top:230px">Using <span class="blue">one digital workflow.</span></div>
+  <div class="center h1" id="s4h" style="top:230px"><span class="blue">One workflow</span> for all types of investors.</div>
   <svg id="s4lines" class="abs" width="1920" height="1080" style="left:0;top:0"></svg>
   <div id="s4tiles"></div>
 </div>
@@ -125,20 +125,21 @@ html,body{margin:0;background:#000;}
 // ---------- timing (seconds), locked to audio/vo_v2.mp3 ----------
 // VO cue times come from pause detection on the VO; see script.md.
 const SCENES = {
-  s1:[0,8.45], s2:[8.3,13.4], s3:[12.6,21.7], s4:[21.2,29.5], s5:[29.0,39.7],
-  s6:[39.5,52.8], s7:[52.5,56.2], s8:[55.9,64.7], s9:[64.5,73.5],
+  s1:[0,5.85], s2:[5.6,13.2], s3:[12.4,21.7], s4:[21.2,29.15], s5:[28.9,39.6],
+  s6:[39.4,52.55], s7:[52.3,56.0], s8:[55.8,64.6], s9:[64.4,73.5],
 };
+// word start times measured from the VO by speech recognition (pocketsphinx)
 const VO = {
-  hook1:3.05, hook2:5.69, meet:8.50, onb:10.19, power:11.7,
-  withus:13.46, inv:[17.04,18.17,19.15,20.42],
-  workflow:21.46, steps:[24.51,25.19,26.16,27.16,28.18],
-  three:29.27, ways:[31.15,32.48,34.31], whichever:36.16, journey:37.58,
-  days:39.86, minutes:41.54, oldway:42.83, old:[44.03,44.82,45.68,46.63,47.57,48.66], nw:49.95, sixty:51.10,
-  comp:52.71, paper:54.51,
-  built:56.15, inst:[58.97,60.1,61.78,62.75],
-  onboard:64.62, move:66.88, withn:68.58,
+  hook1:0.07, hook2:3.00, meet:5.65, onb:8.46, power:10.15,
+  withus:13.41, inv:[17.02,18.13,19.08,20.36],
+  workflow:21.41, steps:[24.49,25.26,26.2,27.25,28.25],
+  three:29.23, ways:[31.15,32.46,34.29], whichever:36.12, journey:37.53,
+  days:39.80, minutes:41.49, oldway:42.78, old:[43.95,44.88,45.78,46.70,47.63,48.72], nw:49.89, sixty:51.05,
+  comp:52.65, paper:54.47,
+  built:56.11, inst:[58.85,59.65,61.70,62.70],
+  onboard:64.58, move:66.87, withn:68.54,
 };
-const WIPES = [7.62, 63.8];   // arch wipe start times (0.8s each)
+const WIPES = [4.95, 63.7];   // arch wipe start times (0.8s each)
 const DURATION = 73.5;
 
 // ---------- helpers ----------
@@ -225,6 +226,7 @@ const ICON = {
   face:'<path d="M8 16 V10 Q8 8 10 8 H16 M32 8 H38 Q40 8 40 10 V16 M40 32 V38 Q40 40 38 40 H32 M16 40 H10 Q8 40 8 38 V32"/><circle cx="24" cy="21" r="6"/><path d="M14 35 C16 29 32 29 34 35"/>',
   stamp:'<path d="M19 6 H29 L27 20 H21 Z"/><path d="M10 26 Q10 22 14 22 H34 Q38 22 38 26 V32 H10 Z"/><path d="M8 40 H40"/>',
   pen:'<path d="M31 7 L41 17 L18 40 H8 V30 Z"/><path d="M26 12 L36 22"/>',
+  card:'<rect x="5" y="11" width="38" height="27" rx="4"/><path d="M5 19 H43 M11 31 H19 M23 31 H27"/>',
   check:'<circle cx="24" cy="24" r="17"/><path d="M16 24.5 L22 30.5 L33 18.5"/>',
   video:'<rect x="5" y="13" width="28" height="22" rx="4"/><path d="M33 21 L43 15 V33 L33 27"/><circle cx="19" cy="21" r="3.5"/><path d="M12 31 C14 27 24 27 26 31"/>',
   bank:'<path d="M6 18 L24 8 L42 18 Z"/><path d="M10 22 V35 M18 22 V35 M30 22 V35 M38 22 V35 M6 40 H42"/>',
@@ -271,13 +273,13 @@ const L2=lockup($('s2lock'),150,'#fff','rgba(255,255,255,.82)');
 const L9=lockup($('s9lock'),170,'#fff','rgba(255,255,255,.82)');
 
 // ---- S3 investor cards ----
-const INV=[['globe','NRI'],['idcard','OCI'],['passport','Foreign Nationals'],['office','Corporates']];
+const INV=[['globe','Non-Residents'],['idcard','OCI'],['passport','Foreign Nationals'],['office','Corporates']];
 const S3X=i=>226+i*376;
 const S3C=INV.map(([ic,label],i)=>div(`<div class="iconwrap">${icon(ic)}</div><div style="font-size:38px;font-weight:600;letter-spacing:-0.02em">${label}</div>`,
   `left:${S3X(i)}px;top:470px;width:340px;height:310px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:34px`, $('s3cards'),'card'));
 
 // ---- S4 workflow tiles ----
-const STEPN=[['upload','Upload'],['face','Verify'],['stamp','Notarise'],['pen','E-sign'],['check','Activate']];
+const STEPN=[['upload','Upload'],['face','Verify'],['stamp','Notarise'],['pen','E-sign'],['card','Payment']];
 const TX=i=>190+i*320, TY=470;
 const TL=$('s4lines');
 const CONN=STEPN.slice(1).map((_,i)=>{
@@ -343,15 +345,15 @@ function render(t){
     $('net').style.transform=`scale(${1+t*0.01})`;
     S1.forEach(o=>{
       if(o.amb){o.amb.setAttribute('opacity', String(.9*eo(prog(t,.1+(o.i%10)*.08,.8+(o.i%10)*.08))));return;}
-      const a=back(prog(t,.3+o.i*.18,.8+o.i*.18));
+      const a=back(prog(t,.1+o.i*.1,.55+o.i*.1));
       o.g.setAttribute('opacity',String(clamp(a))); o.g.setAttribute('transform',`translate(${o.x} ${o.y}) scale(${Math.max(0,a)}) translate(${-o.x} ${-o.y})`);
-      const d=eio(prog(t,.8+o.i*.2,2.2+o.i*.2)); draw(d,o.path);
-      if(d>=1){const q=((t-2.2-o.i*.2)*.55)%1; const p=o.path.getPointAtLength(o.len*eio(q)); o.dot.setAttribute('cx',p.x);o.dot.setAttribute('cy',p.y);o.dot.setAttribute('opacity',String(Math.sin(Math.PI*q)));}
+      const d=eio(prog(t,.3+o.i*.12,1.5+o.i*.12)); draw(d,o.path);
+      if(d>=1){const q=((t-1.5-o.i*.12)*.55)%1; const p=o.path.getPointAtLength(o.len*eio(q)); o.dot.setAttribute('cx',p.x);o.dot.setAttribute('cy',p.y);o.dot.setAttribute('opacity',String(Math.sin(Math.PI*q)));}
       else o.dot.setAttribute('opacity','0');
     });
-    const h=back(prog(t,.2,.8)); hubG.setAttribute('transform',`translate(960 430) scale(${Math.max(0,h)}) translate(-960 -430)`);
+    const h=back(prog(t,0,.5)); hubG.setAttribute('transform',`translate(960 430) scale(${Math.max(0,h)}) translate(-960 -430)`);
     [ringA,ringB].forEach((r,k)=>{const q=((t*.7)+k*.5)%1; r.setAttribute('r',34+q*90); r.setAttribute('opacity',String((1-q)*.5*clamp(t-.6)));});
-    words($('s1h1'),t,VO.hook1-.1,VO.hook2-.4);
+    words($('s1h1'),t,0,VO.hook2-.35);
     words($('s1h2'),t,VO.hook2-.1);
   }
 
@@ -362,7 +364,7 @@ function render(t){
     const m=eio(prog(t,VO.onb-.5,VO.onb+.2));
     $('s2lock').style.transform=`translateY(${-m*120}px) scale(${lerp(1,.82,m)})`;
     words($('s2l1'),t,VO.onb-.1); words($('s2l2'),t,VO.power-.2,1e9,{st:.045});
-    const ex=eio(prog(t,12.6,13.4));
+    const ex=eio(prog(t,12.4,13.2));
     $('s2').style.transform=`translateY(${-ex*1080}px)`;
   }
 
@@ -383,7 +385,7 @@ function render(t){
     const S=VO.steps;
     TILES.forEach((tl,i)=>{
       // all tiles land faint while "one digital workflow" is said, then light up on their VO cue
-      const t0=VO.workflow+.5+i*.12; const a=back(prog(t,t0,t0+.6));
+      const t0=VO.workflow+.8+i*.12; const a=back(prog(t,t0,t0+.6));
       const lit=eo(prog(t,S[i]-.08,S[i]+.25));
       const done = i<4 ? eo(prog(t,S[i+1]-.08,S[i+1]+.2)) : eo(prog(t,S[4]+.5,S[4]+.8));
       tl.style.opacity=clamp(prog(t,t0,t0+.3))*lerp(.55,1,lit);
