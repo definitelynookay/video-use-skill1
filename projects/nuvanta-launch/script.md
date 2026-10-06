@@ -25,7 +25,7 @@ Scene timings in `video.html` (`VO` and `SCENES`) are locked to the cue times be
 | 0:52.7 | Compliance isn't removed. |
 | 0:54.5 | The paper is. |
 | 0:56.2 | Built for every GIFT City institution. |
-| 0:59.0 to 0:62.8 | IFSC Banks. Brokers & Trading Platforms. PMSs. AIFs & FMEs. |
+| 0:59.0 to 1:02.8 | IFSC Banks. Brokers & Trading Platforms. PMSs. AIFs & FMEs. |
 | 1:04.6 | Onboard global investors. |
 | 1:06.9 | Move global money. |
 | 1:08.6 | With Nuvanta by Rupeeflo. |
