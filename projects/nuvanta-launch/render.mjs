@@ -27,7 +27,7 @@ if (stills) {
     for (let i = a; i < b; i++) { await p.evaluate(t => render(t), from + i / fps); await p.screenshot({ path: path.join(fdir, `${String(i).padStart(5, '0')}.jpg`), type: 'jpeg', quality: 94 }); if (++done % 300 === 0) console.log(`${done}/${n}`); }
   }));
   const ff = ['-y', '-framerate', String(fps), '-i', path.join(fdir, '%05d.jpg')];
-  if (audio) ff.push('-i', audio, '-c:a', 'aac', '-b:a', '192k', '-shortest');
+  if (audio) ff.push('-i', audio, '-af', 'apad', '-c:a', 'aac', '-b:a', '192k', '-shortest');
   ff.push('-c:v', 'libx264', '-preset', 'slow', '-crf', '17', '-pix_fmt', 'yuv420p', '-movflags', '+faststart', path.resolve(dir, out));
   const r = spawnSync('ffmpeg', ff, { stdio: ['ignore', 'ignore', 'inherit'] }); if (r.status) process.exit(r.status);
   console.log('wrote', out);
